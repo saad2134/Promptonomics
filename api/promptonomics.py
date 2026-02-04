@@ -1,6 +1,6 @@
 import requests
 
-class GreenPrompt Client:
+class GreenPromptClient:
     def __init__(self, api_key: str, base_url: str = "https://api.greenprompt.ai/v1"):
         self.base_url = base_url
         self.headers = {
