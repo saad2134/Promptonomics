@@ -470,11 +470,12 @@ soon.
 
 ## ✨ Icon
 
-soon
+<img width="1024" height="1024" alt="ideogram-v3 0_A_logo_representing_carbon-aware_AI_using_a_seedling_breaking_through_a_technica-0" src="https://github.com/user-attachments/assets/94186087-80a5-4c29-af5d-8c1af62e5944" />
+
 
 ## 🔰 Banner
 
-soon
+![lucid-origin_A_simple_logo_of_a_green_leaf_with_technology_in_a_white_background-0](https://github.com/user-attachments/assets/39638ace-edb2-4e48-ad55-e148006a0342)
 
 ---
 
