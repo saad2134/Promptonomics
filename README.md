@@ -28,11 +28,11 @@ flowchart LR
 
 
     %% Repo folder links
-    click BE "./extension" "Open /extension folder"
-    click WEB "./web" "Open /web folder"
-    click API "./api" "Open /api folder"
-    click CORE "./core" "Open /core folder"
-    click DB "./database" "Open /database folder"
+    click BE "https://github.com/saad2134/Promptonomics/tree/main/extension" "Open /extension folder"
+    click WEB "https://github.com/saad2134/Promptonomics/tree/main/web" "Open /web folder"
+    click API "https://github.com/saad2134/Promptonomics/tree/main/api" "Open /api folder"
+    click CORE "https://github.com/saad2134/Promptonomics/tree/main/core" "Open /core folder"
+    click DB "https://github.com/saad2134/Promptonomics/tree/main/database" "Open /database folder"
 
 ```
 
