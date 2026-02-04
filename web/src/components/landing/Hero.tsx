@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import ColorBends from "@/components/ColorBends";
 
 export default function Hero() {
   const [prompt, setPrompt] = useState("");
