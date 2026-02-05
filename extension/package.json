@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite build --watch",
-    "build": "vite build",
+    "build": "vite build && cp -r public/* dist/",
     "clean": "rm -rf dist node_modules"
   },
   "dependencies": {

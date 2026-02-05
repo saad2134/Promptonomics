@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "GreenPrompt ",
+  "name": "GreenPrompt",
   "version": "0.1.0",
   "description": "Analyze and optimize LLM prompts for efficiency and cost.",
   "icons": {
@@ -13,13 +13,32 @@
   "permissions": [
     "storage",
     "activeTab",
-    "scripting"
+    "scripting",
+    "action"
   ],
 
   "host_permissions": [
     "https://chat.openai.com/*",
+    "https://www.chat.openai.com/*",
+    "https://chatgpt.com/*",
+    "https://www.chatgpt.com/*",
     "https://claude.ai/*",
-    "https://gemini.google.com/*"
+    "https://www.claude.ai/*",
+    "https://gemini.google.com/*",
+    "https://www.gemini.google.com/*",
+    "https://perplexity.ai/*",
+    "https://www.perplexity.ai/*",
+    "https://deepseek.com/*",
+    "https://www.deepseek.com/*",
+    "https://mistral.ai/*",
+    "https://www.mistral.ai/*",
+    "https://huggingface.co/*",
+    "https://www.huggingface.co/*",
+    "https://you.com/*",
+    "https://www.you.com/*",
+    "https://copilot.microsoft.com/*",
+    "https://www.copilot.microsoft.com/*",
+    "<all_urls>"
   ],
 
   "background": {
@@ -31,8 +50,25 @@
     {
       "matches": [
         "https://chat.openai.com/*",
+        "https://www.chat.openai.com/*",
+        "https://chatgpt.com/*",
+        "https://www.chatgpt.com/*",
         "https://claude.ai/*",
-        "https://gemini.google.com/*"
+        "https://www.claude.ai/*",
+        "https://gemini.google.com/*",
+        "https://www.gemini.google.com/*",
+        "https://perplexity.ai/*",
+        "https://www.perplexity.ai/*",
+        "https://deepseek.com/*",
+        "https://www.deepseek.com/*",
+        "https://mistral.ai/*",
+        "https://www.mistral.ai/*",
+        "https://huggingface.co/*",
+        "https://www.huggingface.co/*",
+        "https://you.com/*",
+        "https://www.you.com/*",
+        "https://copilot.microsoft.com/*",
+        "https://www.copilot.microsoft.com/*"
       ],
       "js": ["content.js"],
       "run_at": "document_idle"
@@ -40,20 +76,53 @@
   ],
 
   "action": {
-    "default_title": "GreenPrompt ",
+    "default_title": "GreenPrompt",
     "default_popup": "popup.html"
   },
+
+  "options_page": "options.html",
 
   "web_accessible_resources": [
     {
       "resources": [
         "injected.js",
-        "injected.css"
+        "injected.css",
+        "popup.js",
+        "popup.css",
+        "options.js",
+        "options.css",
+        "assets/popup.css",
+        "assets/injected.css",
+        "assets/options.css",
+        "assets/browser-polyfill-DMmbowld.js",
+        "assets/index-C5HPWpmc.js",
+        "icons/icon-16.png",
+        "icons/icon-32.png",
+        "icons/icon-48.png",
+        "icons/icon-128.png"
       ],
       "matches": [
         "https://chat.openai.com/*",
+        "https://www.chat.openai.com/*",
+        "https://chatgpt.com/*",
+        "https://www.chatgpt.com/*",
         "https://claude.ai/*",
-        "https://gemini.google.com/*"
+        "https://www.claude.ai/*",
+        "https://gemini.google.com/*",
+        "https://www.gemini.google.com/*",
+        "https://perplexity.ai/*",
+        "https://www.perplexity.ai/*",
+        "https://deepseek.com/*",
+        "https://www.deepseek.com/*",
+        "https://mistral.ai/*",
+        "https://www.mistral.ai/*",
+        "https://huggingface.co/*",
+        "https://www.huggingface.co/*",
+        "https://you.com/*",
+        "https://www.you.com/*",
+        "https://copilot.microsoft.com/*",
+        "https://www.copilot.microsoft.com/*",
+        "<all_urls>"
       ]
     }
   ]
