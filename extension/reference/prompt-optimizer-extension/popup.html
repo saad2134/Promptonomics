@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Prompt Optimizer</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <div class="header">
+      <h1>🌱 AI Prompt Optimizer</h1>
+      <p class="tagline">Save energy, one prompt at a time</p>
+    </div>
+
+    <div class="stats-container">
+      <h2>Your Impact</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">🌍</div>
+          <div class="stat-value" id="total-co2">0g</div>
+          <div class="stat-label">CO₂ Saved</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon">💧</div>
+          <div class="stat-value" id="total-water">0ml</div>
+          <div class="stat-label">Water Saved</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon">⚡</div>
+          <div class="stat-value" id="total-energy">0 kWh</div>
+          <div class="stat-label">Energy Saved</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon">✨</div>
+          <div class="stat-value" id="total-optimizations">0</div>
+          <div class="stat-label">Optimizations</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h3>How It Works</h3>
+      <ol>
+        <li>Type your prompt in any supported AI chat</li>
+        <li>Click the "Optimize" button</li>
+        <li>Review the optimized version and savings</li>
+        <li>Use the optimized prompt to save energy!</li>
+      </ol>
+    </div>
+
+    <div class="supported-platforms">
+      <h3>Supported Platforms</h3>
+      <div class="platforms">
+        <span class="platform-badge">ChatGPT</span>
+        <span class="platform-badge">Claude</span>
+        <span class="platform-badge">Gemini</span>
+        <span class="platform-badge">Copilot</span>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="reset-stats" class="btn-reset">Reset Statistics</button>
+    </div>
+
+    <div class="footer">
+      <p>Every character saved reduces AI server energy consumption</p>
+    </div>
+  </div>
+
+  <script src="optimizer.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

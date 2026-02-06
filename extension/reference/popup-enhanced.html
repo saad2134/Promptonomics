@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 400px;
+      min-height: 500px;
+      margin: 0;
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+      color: #1f2937;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #10b981;
+    }
+
+    .header h2 {
+      margin: 0 0 5px 0;
+      color: #065f46;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .header p {
+      margin: 0;
+      color: #047857;
+      font-size: 14px;
+    }
+
+    .settings-section {
+      background: white;
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .settings-section h3 {
+      margin: 0 0 12px 0;
+      color: #065f46;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .setting-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .setting-row label {
+      font-size: 14px;
+      color: #374151;
+    }
+
+    .setting-row select {
+      padding: 6px 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      font-size: 14px;
+      background: white;
+      cursor: pointer;
+    }
+
+    .stats-section {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .stats-section h3 {
+      margin: 0 0 15px 0;
+      color: #065f46;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 12px;
+      border-radius: 8px;
+      background: #f9fafb;
+      border-left: 4px solid #10b981;
+    }
+
+    .stat-value {
+      font-size: 20px;
+      font-weight: 700;
+      color: #065f46;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .equivalents-section {
+      background: #f0fdf4;
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 2px solid #86efac;
+    }
+
+    .equivalents-section h3 {
+      margin: 0 0 12px 0;
+      color: #065f46;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .equivalent-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .equivalent-item {
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      color: #047857;
+    }
+
+    .equivalent-icon {
+      font-size: 16px;
+      margin-right: 6px;
+    }
+
+    .impact-message {
+      text-align: center;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .impact-low {
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fbbf24;
+    }
+
+    .impact-medium {
+      background: #dbeafe;
+      color: #1e40af;
+      border: 1px solid #60a5fa;
+    }
+
+    .impact-high {
+      background: #d1fae5;
+      color: #065f46;
+      border: 1px solid #10b981;
+    }
+
+    .actions-section {
+      text-align: center;
+    }
+
+    .btn-reset {
+      background: #ef4444;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-reset:hover {
+      background: #dc2626;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 1px solid #d1d5db;
+      font-size: 12px;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h2>🌱 Prompt Optimizer</h2>
+    <p>Track your environmental impact</p>
+  </div>
+
+  <div class="settings-section">
+    <h3>⚙️ Settings</h3>
+    <div class="setting-row">
+      <label for="model-size">AI Model Size:</label>
+      <select id="model-size">
+        <option value="small">Small (GPT-3.5)</option>
+        <option value="medium" selected>Medium (GPT-4)</option>
+        <option value="large">Large (GPT-4 Turbo)</option>
+      </select>
+    </div>
+    <div class="setting-row">
+      <label for="region-selector">Your Region:</label>
+      <select id="region-selector">
+        <option value="US">United States</option>
+        <option value="EU">European Union</option>
+        <option value="CN">China</option>
+        <option value="IN">India</option>
+        <option value="RENEWABLE">Renewable Region</option>
+        <option value="GLOBAL" selected>Global Average</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="stats-section">
+    <h3>📊 Your Impact</h3>
+    <div class="stat-grid">
+      <div class="stat-item">
+        <div class="stat-value" id="total-co2">0 g</div>
+        <div class="stat-label">CO₂ Saved</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="total-water">0 ml</div>
+        <div class="stat-label">Water Saved</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="total-energy">0 kWh</div>
+        <div class="stat-label">Energy Saved</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="total-optimizations">0</div>
+        <div class="stat-label">Optimizations</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="equivalents-section">
+    <h3>🌍 Equivalent Impact</h3>
+    <div class="equivalent-grid">
+      <div class="equivalent-item">
+        <span class="equivalent-icon">🚗</span>
+        <span id="car-equivalent">0 km not driven</span>
+      </div>
+      <div class="equivalent-item">
+        <span class="equivalent-icon">📱</span>
+        <span id="phone-equivalent">0 phone charges</span>
+      </div>
+      <div class="equivalent-item">
+        <span class="equivalent-icon">📺</span>
+        <span id="tv-equivalent">0 hours of TV</span>
+      </div>
+      <div class="equivalent-item">
+        <span class="equivalent-icon">🌳</span>
+        <span id="trees-equivalent">0 trees/year</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="impact-message" id="impact-message">
+    🌱 Start optimizing prompts to see your environmental impact!
+  </div>
+
+  <div class="actions-section">
+    <button class="btn-reset" id="reset-stats">🔄 Reset Statistics</button>
+  </div>
+
+  <div class="footer">
+    Based on CodeCarbon methodology • Updated with regional carbon intensity
+  </div>
+
+  <script src="popup-enhanced.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Icon Generator</title>
+</head>
+<body>
+  <canvas id="canvas16" width="16" height="16"></canvas>
+  <canvas id="canvas48" width="48" height="48"></canvas>
+  <canvas id="canvas128" width="128" height="128"></canvas>
+  
+  <script>
+    function drawIcon(canvas) {
+      const ctx = canvas.getContext('2d');
+      const size = canvas.width;
+      const scale = size / 128;
+      
+      // Clear canvas
+      ctx.clearRect(0, 0, size, size);
+      
+      // Draw gradient circle
+      const gradient = ctx.createLinearGradient(0, 0, size, size);
+      gradient.addColorStop(0, '#10B981');
+      gradient.addColorStop(1, '#059669');
+      
+      ctx.beginPath();
+      ctx.arc(size/2, size/2, size * 0.47, 0, Math.PI * 2);
+      ctx.fillStyle = gradient;
+      ctx.fill();
+      
+      // Draw lightning bolt
+      ctx.fillStyle = 'white';
+      ctx.strokeStyle = 'white';
+      ctx.lineWidth = 2 * scale;
+      ctx.lineJoin = 'round';
+      
+      ctx.beginPath();
+      ctx.moveTo(70 * scale, 30 * scale);
+      ctx.lineTo(45 * scale, 68 * scale);
+      ctx.lineTo(60 * scale, 68 * scale);
+      ctx.lineTo(55 * scale, 98 * scale);
+      ctx.lineTo(85 * scale, 58 * scale);
+      ctx.lineTo(70 * scale, 58 * scale);
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+      
+      // Draw leaf
+      ctx.fillStyle = '#A7F3D0';
+      ctx.strokeStyle = '#10B981';
+      ctx.lineWidth = 1.5 * scale;
+      
+      ctx.beginPath();
+      ctx.ellipse(90 * scale, 75 * scale, 5 * scale, 10 * scale, Math.PI * 0.25, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+    }
+    
+    // Draw all sizes
+    ['canvas16', 'canvas48', 'canvas128'].forEach(id => {
+      drawIcon(document.getElementById(id));
+    });
+    
+    // Convert to PNG and download
+    setTimeout(() => {
+      ['16', '48', '128'].forEach(size => {
+        const canvas = document.getElementById('canvas' + size);
+        canvas.toBlob(blob => {
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'icon' + size + '.png';
+          a.click();
+        });
+      });
+    }, 100);
+  </script>
+</body>
+</html>

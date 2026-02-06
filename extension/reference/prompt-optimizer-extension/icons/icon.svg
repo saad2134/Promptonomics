@@ -1,0 +1,18 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle with gradient -->
+  <circle cx="64" cy="64" r="60" fill="url(#gradient)"/>
+  
+  <!-- Lightning bolt symbol -->
+  <path d="M70 30L45 68H60L55 98L85 58H70L70 30Z" fill="white" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+  
+  <!-- Leaf decoration -->
+  <path d="M90 85C90 85 95 80 95 75C95 70 90 65 90 65C90 65 85 70 85 75C85 80 90 85 90 85Z" fill="#A7F3D0" stroke="#10B981" stroke-width="1.5"/>
+  
+  <!-- Define gradient -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>

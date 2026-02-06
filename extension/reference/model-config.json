@@ -1,0 +1,194 @@
+{
+  "modelEnergyConstants": {
+    "description": "2025 state-of-the-art energy per token constants based on 'How Hungry is AI?' and DitchCarbon research",
+    "source": "How Hungry is AI? (2025), DitchCarbon 2025 estimates",
+    "units": "kWh per token (input + output)",
+    "models": {
+      "gpt-4o": {
+        "energyPerToken": 0.0000012,
+        "sizeBucket": "288B",
+        "hardware": "H100",
+        "precision": "FP16",
+        "co2PerToken_mg": 30,
+        "notes": "Short query ~0.43 Wh, 700M queries/day = ~138k-163k tons CO₂e/year"
+      },
+      "claude-3.5-sonnet": {
+        "energyPerToken": 0.0000011,
+        "sizeBucket": "288B", 
+        "hardware": "H100",
+        "precision": "FP16",
+        "co2PerToken_mg": 28
+      },
+      "claude-3-opus": {
+        "energyPerToken": 0.0000013,
+        "sizeBucket": "288B+",
+        "hardware": "H100",
+        "precision": "FP16",
+        "co2PerToken_mg": 32
+      },
+      "claude-3-haiku": {
+        "energyPerToken": 0.0000004,
+        "sizeBucket": "70B",
+        "hardware": "A100",
+        "precision": "FP16",
+        "co2PerToken_mg": 15
+      },
+      "gemini-2.5": {
+        "energyPerToken": 0.0000011,
+        "sizeBucket": "288B",
+        "hardware": "H100",
+        "precision": "FP16",
+        "co2PerToken_mg": 29
+      },
+      "gemini-1.5-pro": {
+        "energyPerToken": 0.0000010,
+        "sizeBucket": "288B",
+        "hardware": "H100", 
+        "precision": "FP16",
+        "co2PerToken_mg": 27
+      },
+      "gemini-1.5-flash": {
+        "energyPerToken": 0.0000005,
+        "sizeBucket": "70B",
+        "hardware": "A100",
+        "precision": "FP16",
+        "co2PerToken_mg": 16
+      },
+      "llama-3.1-405b": {
+        "energyPerToken": 0.0000014,
+        "sizeBucket": "288B+",
+        "hardware": "H100",
+        "precision": "FP16",
+        "co2PerToken_mg": 35
+      },
+      "llama-3.1-70b": {
+        "energyPerToken": 0.0000005,
+        "sizeBucket": "70B",
+        "hardware": "A100",
+        "precision": "FP16", 
+        "co2PerToken_mg": 15
+      },
+      "llama-3.1-8b": {
+        "energyPerToken": 0.0000001,
+        "sizeBucket": "13B",
+        "hardware": "A100",
+        "precision": "FP16",
+        "co2PerToken_mg": 3
+      }
+    },
+    "sizeBuckets": {
+      "13B": {
+        "energyPerToken": 0.0000001,
+        "co2PerToken_mg": 3,
+        "hardware": "A100",
+        "precision": "FP16"
+      },
+      "27B": {
+        "energyPerToken": 0.0000002,
+        "co2PerToken_mg": 6,
+        "hardware": "A100", 
+        "precision": "FP16"
+      },
+      "70B": {
+        "energyPerToken": 0.0000005,
+        "co2PerToken_mg": 15,
+        "hardware": "A100",
+        "precision": "FP16"
+      },
+      "288B": {
+        "energyPerToken": 0.0000012,
+        "co2PerToken_mg": 30,
+        "hardware": "H100",
+        "precision": "FP16"
+      },
+      "288B+": {
+        "energyPerToken": 0.0000014,
+        "co2PerToken_mg": 35,
+        "hardware": "H100",
+        "precision": "FP16"
+      }
+    }
+  },
+  "carbonIntensity": {
+    "description": "Regional carbon intensity factors (gCO₂e/kWh)",
+    "source": "CodeCarbon regional grid factors, ElectricityMaps real-time data",
+    "defaultGlobal": 475,
+    "regions": {
+      "US": {
+        "average": 386,
+        "states": {
+          "CA": 198,
+          "NY": 187,
+          "TX": 450,
+          "FL": 493,
+          "WA": 95,
+          "OR": 147,
+          "CO": 241
+        }
+      },
+      "EU": {
+        "average": 231,
+        "countries": {
+          "FR": 59,
+          "DE": 401,
+          "UK": 181,
+          "SE": 13,
+          "NO": 28,
+          "ES": 175,
+          "IT": 239
+        }
+      },
+      "Asia": {
+        "average": 520,
+        "countries": {
+          "CN": 581,
+          "JP": 452,
+          "KR": 515,
+          "IN": 708,
+          "SG": 492
+        }
+      },
+      "Other": {
+        "AU": 720,
+        "BR": 364,
+        "CA": 129,
+        "MX": 439
+      }
+    }
+  },
+  "waterIntensity": {
+    "description": "Water usage factors (L/kWh)",
+    "source": "Datacenter WUE studies, regional electricity water intensity",
+    "datacenterWUE": {
+      "default": 0.30,
+      "providers": {
+        "microsoft": 0.25,
+        "google": 0.32,
+        "amazon": 0.28,
+        "anthropic": 0.30,
+        "openai": 0.31
+      }
+    },
+    "gridWaterIntensity": {
+      "description": "Average water intensity of electricity generation",
+      "default": 7.6,
+      "regions": {
+        "US": 7.6,
+        "EU": 5.2,
+        "CN": 9.8,
+        "IN": 12.4,
+        "Global": 8.1
+      }
+    }
+  },
+  "conversionFactors": {
+    "tokensPerChar": 0.25,
+    "kWhToWh": 1000,
+    "mgToGrams": 0.001,
+    "mlToLiters": 0.001,
+    "averageQueryTokens": {
+      "input": 150,
+      "output": 400
+    }
+  }
+}
